@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { CadastroPostoPage } from '../pages/cadastro-posto/cadastro-posto';
+import { MapaPage } from '../pages/mapa/mapa';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,6 +16,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+
+import { AgmCoreModule } from 'angular2-google-maps/core'; 
 
 export const firebaseConfig = {
    apiKey: "AIzaSyDnHIs7R_LqH7ynGo5YBwQXpWQ3N2sd-sg",
@@ -29,21 +33,28 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    CadastroPostoPage,
+    MapaPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAXZRVuN6HrhOj0Vq6v-zvyYbRKZV-YObo'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    CadastroPostoPage,
+    MapaPage
   ],
   providers: [
     StatusBar,

@@ -25198,3 +25198,41 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+.menu-inner .item-ios {
+  background-color: #7a332c;
+  margin-top: 10px;
+  color: #ecf0f1;
+  font-weight: bold;
+  border-radius: 35px;
+}
+
+ion-backdrop, .menu-inner, .menu-inner .content {
+  background-color: transparent !important;
+}
+
+.icone-menu {
+  margin-right: 10px;
+}
+
+sebm-google-map {
+  height: 500px;
+}
+
+.iconePng {
+  margin: auto;
+  height: 250px;
+}
+
+.padding-img {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.list-buttons-login {
+  text-align: center;
+}
+
+page-login ion-label {
+  color: brown;
+}
