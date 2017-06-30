@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
+import {PostoServiceProvider} from '../../providers/posto-service/posto-service' ;
+
 
 /**
  * Generated class for the CadastroPostoPage page.
@@ -14,7 +16,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CadastroPostoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  posto = {nome: '' , endereco: '' , longitude : '' , latitude : '' , gasolina: '' , alcool:'' , diesel : '' }
+
+  constructor(public navCtrl: NavController, public navParams: NavParams , public postoService : PostoServiceProvider ,  private alertCtrl : AlertController) {
+
+  }
+
+  cadastrar(){
+    this.postoService.createPosto(this.posto).subscribe(
+      () => {
+        
+        this.alertCtrl.create({
+          title : 'Confirmar',
+          message: "Posto cadastrado com sucesso.",
+          buttons : [
+            {
+              text: 'Ok',
+              role: 'cancel',
+            }
+          ]
+         });
+      },
+      (err) =>{
+        this.alertCtrl.create({
+          title : 'Erro',
+          message: "Erro ao cadastrar o posto.",
+          buttons : [
+            {
+              text: 'Ok',
+              role: 'cancel',
+            }
+          ]
+         });                      
+      }
+    )
   }
 
   ionViewDidLoad() {

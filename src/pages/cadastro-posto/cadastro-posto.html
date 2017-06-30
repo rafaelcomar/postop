@@ -18,5 +18,41 @@
 
 
 <ion-content padding>
+  
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="posto.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Endereço</ion-label>
+      <ion-input type="text" [(ngModel)]="posto.endereco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Longitude</ion-label>
+      <ion-input type="text" [(ngModel)]="posto.longitude"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Latitude</ion-label>
+      <ion-input type="text" [(ngModel)]="posto.latitude"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Gasolina</ion-label>
+      <ion-input type="text" [(ngModel)]="posto.gasolina"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Alcool</ion-label>
+      <ion-input type="text" [(ngModel)]="posto.alcool"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Diesel</ion-label>
+      <ion-input type="text" [(ngModel)]="posto.diesel"></ion-input>
+    </ion-item>
+   
+  </ion-list>
+  <div padding class="list-buttons-login">
+    <button ion-button (click)="cadastrar()"> Cadastrar</button>
+  </div>
+
 
 </ion-content>

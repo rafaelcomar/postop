@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
@@ -21,11 +21,10 @@ export class LoginPage {
   user = {email : "" , password : ""}
   logado = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public auth : AuthServiceProvider , public afAuth : AngularFireAuth) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , public auth : AuthServiceProvider , public afAuth : AngularFireAuth , private alertCtrl : AlertController) {
     const authObserver =  afAuth.authState.subscribe( user => {
       if (user) {
         this.logado = true;
-        
         authObserver.unsubscribe();
       }else{
         authObserver.unsubscribe();
@@ -36,8 +35,27 @@ export class LoginPage {
   registerUser(){
     this.auth.signupUser(this.user.email , this.user.password).then(
       (authData) => {
-        this.logado = true;
-        alert("Usuario cadastrado com sucesso.");
+
+        let alertC = this.alertCtrl.create({
+          title : 'Confirmar',
+          message: "Usuario cadastrado com sucesso.",
+          buttons : [
+            {
+              text: 'Não',
+              role: 'cancel',
+              handler: ()  =>{
+
+              }
+            },
+            {
+              text : 'Sim',
+              handler: () =>{
+                this.login();
+              }
+            }
+          ]
+        });
+        alertC.present();
         
       }
     ).catch(

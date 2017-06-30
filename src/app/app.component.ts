@@ -26,7 +26,7 @@ export class MyApp {
 
     const authObserver = afAuth.authState.subscribe( user => {
       if (user) {
-        this.rootPage = HomePage;
+        this.rootPage = CadastroPostoPage;
         authObserver.unsubscribe();
       }else{
         this.rootPage = LoginPage;

@@ -17,7 +17,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
-import { AgmCoreModule } from 'angular2-google-maps/core'; 
+import { AgmCoreModule } from 'angular2-google-maps/core';
+import { PostoServiceProvider } from '../providers/posto-service/posto-service'; 
+import { HttpModule } from '@angular/http';
 
 export const firebaseConfig = {
    apiKey: "AIzaSyDnHIs7R_LqH7ynGo5YBwQXpWQ3N2sd-sg",
@@ -45,7 +47,8 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAXZRVuN6HrhOj0Vq6v-zvyYbRKZV-YObo'
-    })
+    }),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,7 +63,8 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    PostoServiceProvider
   ]
 })
 export class AppModule {}
