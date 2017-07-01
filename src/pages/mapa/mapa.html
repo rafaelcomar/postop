@@ -21,5 +21,18 @@
     [latitude]="-3.760985"
     [longitude]="-38.482242"
     [zoom]="10"
-  ></sebm-google-map>
+    
+  >
+    <sebm-google-map-marker
+        [latitude]="-3.777626"
+        [longitude]="-38.484723"
+        (markerClick)="exibirInformacoes($event)"
+    > </sebm-google-map-marker>
+    
+    <sebm-google-map-marker
+        [latitude]="-3.761690"
+        [longitude]="-38.481269"
+    >
+    </sebm-google-map-marker>
+  </sebm-google-map>
 </ion-content>

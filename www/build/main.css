@@ -25233,6 +25233,20 @@ sebm-google-map {
   text-align: center;
 }
 
+.myStyleCard img {
+  height: 150px;
+}
+
+.myStyleCard ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.myStyleCard p {
+  line-height: 1.2;
+  font-size: 14px;
+}
+
 page-login ion-label {
   color: brown;
 }

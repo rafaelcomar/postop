@@ -9,6 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { CadastroPostoPage } from '../pages/cadastro-posto/cadastro-posto';
 import { MapaPage } from '../pages/mapa/mapa';
 
+
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({

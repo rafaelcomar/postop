@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { CadastroPostoPage } from '../pages/cadastro-posto/cadastro-posto';
 import { MapaPage } from '../pages/mapa/mapa';
+import { PopoverPage } from '../pages/popoverpage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,7 +38,8 @@ export const firebaseConfig = {
     ListPage,
     LoginPage,
     CadastroPostoPage,
-    MapaPage
+    MapaPage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ export const firebaseConfig = {
     ListPage,
     LoginPage,
     CadastroPostoPage,
-    MapaPage
+    MapaPage,
+    PopoverPage
   ],
   providers: [
     StatusBar,

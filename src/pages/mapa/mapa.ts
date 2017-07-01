@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { PopoverController } from 'ionic-angular';
+import { PopoverPage } from '../../pages/popoverpage';
 /**
  * Generated class for the MapaPage page.
  *
@@ -14,7 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MapaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , public popoverCtrl : PopoverController) {
+  }
+
+  exibirInformacoes(myEvent){
+     let popover = this.popoverCtrl.create(PopoverPage);
+      popover.present({
+        ev: myEvent
+      });
   }
 
   ionViewDidLoad() {

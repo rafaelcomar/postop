@@ -42,3 +42,17 @@ sebm-google-map{
 .list-buttons-login{
     text-align: center
 }
+
+.myStyleCard{
+    img{
+        height: 150px;
+    }
+    ion-card-title{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    p{
+        line-height: 1.2;
+        font-size:14px;
+    }
+}
