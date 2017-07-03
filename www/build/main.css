@@ -25199,16 +25199,26 @@ ion-navbar.toolbar {
   }
 }
 
-.menu-inner .item-ios {
+.menu-inner .item {
   background-color: #7a332c;
   margin-top: 10px;
   color: #ecf0f1;
   font-weight: bold;
-  border-radius: 35px;
+  border-radius: 15px;
 }
 
-ion-backdrop, .menu-inner, .menu-inner .content {
-  background-color: transparent !important;
+.menu-inner .item-inner {
+  border-bottom: none !important;
+}
+
+.menu-inner .list {
+  width: 85%;
+  margin-top: 40px;
+  margin-left: 15px;
+}
+
+.menu-inner {
+  background-color: #edf0ef;
 }
 
 .icone-menu {
@@ -25216,7 +25226,7 @@ ion-backdrop, .menu-inner, .menu-inner .content {
 }
 
 sebm-google-map {
-  height: 500px;
+  height: 100%;
 }
 
 .iconePng {
@@ -25245,6 +25255,24 @@ sebm-google-map {
 .myStyleCard p {
   line-height: 1.2;
   font-size: 14px;
+}
+
+.perfil-menu {
+  background-color: #7a332c;
+  height: 200px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.icone-perfil-menu {
+  width: 125px;
+}
+
+.icone-logof-menu {
+  width: 50px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 17px;
 }
 
 page-login ion-label {

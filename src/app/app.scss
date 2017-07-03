@@ -14,22 +14,34 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-.menu-inner .item-ios{
+.menu-inner .item{
     background-color: #7a332c;
     margin-top: 10px;
     color: #ecf0f1;
     font-weight: bold;
-    border-radius: 35px;
+    border-radius: 15px;
+}
+.menu-inner .item-inner{
+    border-bottom: none!important;
+}
+.menu-inner .list{
+    width: 85%;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+.menu-inner{
+    // background-color:#ecf0f1;
+    background-color:#edf0ef;
 }
 
-ion-backdrop , .menu-inner , .menu-inner .content{
-    background-color: transparent!important;
-}
+// ion-backdrop , .menu-inner , .menu-inner .content{
+//     background-color: transparent!important;
+// }
 .icone-menu {
     margin-right:10px;
 }
 sebm-google-map{
-    height: 500px;
+    height: 100%;
 }
 .iconePng{
     margin: auto;
@@ -55,4 +67,20 @@ sebm-google-map{
         line-height: 1.2;
         font-size:14px;
     }
+}
+.perfil-menu{
+    background-color: #7a332c;
+    height: 200px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.icone-perfil-menu{
+    width:125px;
+}
+.icone-logof-menu{
+    width: 50px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 17px;
 }

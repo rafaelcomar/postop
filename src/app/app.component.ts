@@ -27,7 +27,7 @@ export class MyApp {
 
     const authObserver = afAuth.authState.subscribe( user => {
       if (user) {
-        this.rootPage = CadastroPostoPage;
+        this.rootPage = MapaPage;
         authObserver.unsubscribe();
       }else{
         this.rootPage = LoginPage;
@@ -39,11 +39,13 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Cadastro', component: CadastroPostoPage },
-      { title: 'List', component: ListPage },
-      { title: 'Login', component: LoginPage },
-      { title: 'Mapa', component: MapaPage },
+      { title: 'PROCURAR POSTO', component: HomePage },
+      { title: 'MEU PERFIL', component: HomePage },
+      { title: 'CONFIGURAÇÕES', component: HomePage },
+      { title: 'FAVORITOS', component: HomePage },
+      { title: 'LISTA', component: ListPage },
+      { title: 'CADASTRO', component: CadastroPostoPage },
+      { title: 'MAPA', component: MapaPage },
     ];
 
   }
