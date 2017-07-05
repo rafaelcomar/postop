@@ -9,6 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { CadastroPostoPage } from '../pages/cadastro-posto/cadastro-posto';
 import { MapaPage } from '../pages/mapa/mapa';
 import { PopoverPage } from '../pages/popoverpage';
+import { Network } from '@ionic-native/network';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,6 +22,10 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { PostoServiceProvider } from '../providers/posto-service/posto-service'; 
 import { HttpModule } from '@angular/http';
+import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
+import { ConnectivityProvider } from '../providers/connectivity/connectivity';
+import { GoogleMapsClusterProvider } from '../providers/google-maps-cluster/google-maps-cluster';
 
 export const firebaseConfig = {
    apiKey: "AIzaSyDnHIs7R_LqH7ynGo5YBwQXpWQ3N2sd-sg",
@@ -50,7 +55,9 @@ export const firebaseConfig = {
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAXZRVuN6HrhOj0Vq6v-zvyYbRKZV-YObo'
     }),
-    HttpModule
+    HttpModule,
+    Network
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -67,7 +74,11 @@ export const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    PostoServiceProvider
+    PostoServiceProvider,
+    Geolocation,
+    GoogleMapsProvider,
+    ConnectivityProvider,
+    GoogleMapsClusterProvider
   ]
 })
 export class AppModule {}

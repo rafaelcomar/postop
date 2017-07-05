@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
+ 
 </ion-header>
 
 
@@ -17,16 +17,26 @@
     
   >
     <sebm-google-map-marker
+        [latitude]= ""
+        [longitude]= ""
+        (markerClick)="exibirInformacoes($event)"
+        [iconUrl]="'../../assets/icon/posto2.png'">
+    > </sebm-google-map-marker>
+
+    <sebm-google-map-marker
         [latitude]="-3.777626"
         [longitude]="-38.484723"
         (markerClick)="exibirInformacoes($event)"
+        [iconUrl]="'../../assets/icon/posto2.png'">
     > </sebm-google-map-marker>
     
     <sebm-google-map-marker
         [latitude]="-3.761690"
         [longitude]="-38.481269"
-    >
-    </sebm-google-map-marker>
+        (markerClick)="exibirInformacoes($event)"
+        [iconUrl]="'../../assets/icon/posto2.png'">
+    ></sebm-google-map-marker>
+
   </sebm-google-map>
 </ion-content>
 
