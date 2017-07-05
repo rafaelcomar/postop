@@ -21,7 +21,7 @@ export class MyApp {
   rootPage: any = HomePage;
   
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any , icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen , public afAuth : AngularFireAuth) {
 
@@ -34,18 +34,18 @@ export class MyApp {
         authObserver.unsubscribe();
       }
     })
-
+    
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'PROCURAR POSTO', component: HomePage },
-      { title: 'MEU PERFIL', component: HomePage },
-      { title: 'CONFIGURAÇÕES', component: HomePage },
-      { title: 'FAVORITOS', component: HomePage },
-      { title: 'LISTA', component: ListPage },
-      { title: 'CADASTRO', component: CadastroPostoPage },
-      { title: 'MAPA', component: MapaPage },
+      { title: 'PROCURAR POSTO', component: HomePage , icon:'lupa-01'},
+      { title: 'MEU PERFIL', component: HomePage , icon:'perfil-pequeno'},
+      { title: 'CONFIGURAÇÕES', component: HomePage , icon:'configuracoes-01'},
+      { title: 'FAVORITOS', component: HomePage , icon:'favoritos'},
+      { title: 'LISTA', component: ListPage , icon:'meu-rendimento'},
+      { title: 'CADASTRO', component: CadastroPostoPage , icon:'mensagem'},
+      { title: 'MAPA', component: MapaPage , icon:'sobre'},
     ];
 
   }
@@ -55,7 +55,8 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      this.splashScreen.show();
+      // this.splashScreen.hide();
     });
   }
 

@@ -1,15 +1,20 @@
 <ion-menu type="overlay" [content]="content" side="right">
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-         <ion-icon name="logo-android" class="icone-menu"></ion-icon>  {{p.title}}
+        
+            <img class="icone-menu" src="../../assets/icon/{{p.icon}}.png" > 
+          <span class="text-span">{{p.title}}</span>
       </button>
     </ion-list>
     <ion-footer class="perfil-menu">
+        
       <div>
           <img class="icone-perfil-menu" src="../../assets/img/perfil.png" > 
       </div>
+      
       <div>
-          <img class="icone-logof-menu" src="../../assets/img/botao-logof.png" > 
+          <img class="icone-configuracoes-menu" src="../../assets/icon/configuracoes-01.png" > 
+          <img class="icone-logof-menu" src="../../assets/icon/logoff-01.png" > 
       </div>
     </ion-footer>
     

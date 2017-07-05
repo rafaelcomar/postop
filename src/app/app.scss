@@ -29,16 +29,35 @@
     margin-top: 40px;
     margin-left: 15px;
 }
-.menu-inner{
-    // background-color:#ecf0f1;
-    background-color:#edf0ef;
+.menu-inner .list-ios{
+    padding-top: 10px;
 }
 
-// ion-backdrop , .menu-inner , .menu-inner .content{
-//     background-color: transparent!important;
-// }
+.menu-inner .item:first-child{
+    background-color: white;
+        border: 1px solid brown;
+    color: #7a332c;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.md .menu-inner, .menu-inner , .ios .menu-inner{
+    // background-color:#ecf0f1;
+    background-color:#edf0ef;
+    border-left: 7px solid #ffffff;
+}
+.menu-inner .label ,.menu-inner  .label-md ,.menu-inner  .label-ios ,.menu-inner .label-wp{
+    margin: 8px 8px 8px 0;
+
+}
+.text-span{
+    float:left;
+    margin-top: 5px;
+}
 .icone-menu {
     margin-right:10px;
+    width: 30px;
+    float: left;
 }
 sebm-google-map{
     height: 100%;
@@ -79,8 +98,16 @@ sebm-google-map{
     width:125px;
 }
 .icone-logof-menu{
-    width: 50px;
+    width: 45px;
     float: right;
     margin-top: 5px;
     margin-right: 17px;
 }
+
+.icone-configuracoes-menu{
+    width: 45px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 17px;
+}
+
