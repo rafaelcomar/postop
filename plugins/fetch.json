@@ -79,7 +79,17 @@
         "is_top_level": true,
         "variables": {
             "API_KEY_FOR_ANDROID": "AIzaSyBdCUgFXGSY7xmKxpXnEpT1PnRk5jVnhJ8",
-            "API_KEY_FOR_IOS": "AIzaSyBdCUgFXGSY7xmKxpXnEpT1PnRk5jVnhJ8"
+            "API_KEY_FOR_IOS": "AIzaSyBdCUgFXGSY7xmKxpXnEpT1PnRk5jVnhJ8",
+            "NSLOCATIONWHENINUSEUSAGEDESCRIPTION": "Show your location on the map",
+            "NSLOCATIONALWAYSUSAGEDESCRIPTION": "Trace your location on the map"
         }
+    },
+    "com.googlemaps.ios": {
+        "source": {
+            "type": "registry",
+            "id": "https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk"
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }

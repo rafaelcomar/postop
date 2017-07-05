@@ -26,6 +26,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMapsProvider } from '../providers/google-maps/google-maps';
 import { ConnectivityProvider } from '../providers/connectivity/connectivity';
 import { GoogleMapsClusterProvider } from '../providers/google-maps-cluster/google-maps-cluster';
+import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, MarkerOptions, Marker } from '@ionic-native/google-maps';
 
 export const firebaseConfig = {
    apiKey: "AIzaSyDnHIs7R_LqH7ynGo5YBwQXpWQ3N2sd-sg",
@@ -55,8 +56,7 @@ export const firebaseConfig = {
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAXZRVuN6HrhOj0Vq6v-zvyYbRKZV-YObo'
     }),
-    HttpModule,
-    Network
+    HttpModule
     
   ],
   bootstrap: [IonicApp],
