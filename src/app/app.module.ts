@@ -76,6 +76,7 @@ export const firebaseConfig = {
     AuthServiceProvider,
     PostoServiceProvider,
     Geolocation,
+    GoogleMaps,
     GoogleMapsProvider,
     ConnectivityProvider,
     GoogleMapsClusterProvider

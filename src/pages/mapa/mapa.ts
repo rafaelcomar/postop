@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , Platform } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../../pages/popoverpage';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -25,9 +25,13 @@ export class MapaPage {
    @ViewChild('map') mapElement: ElementRef;
     map: any;
     // markerMyPosition: Array<{lat: Number, long: Number}>;
-    lat: Number;long: Number
+    lat: Number;
+    long: Number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public popoverCtrl : PopoverController, public geolocation: Geolocation ,private googleMaps: GoogleMaps) {
+  constructor(public navCtrl: NavController, public platform: Platform, public navParams: NavParams , public popoverCtrl : PopoverController, public geolocation: Geolocation ,private googleMaps: GoogleMaps) {
+    platform.ready().then(() => {
+    this.loadMap();
+  });
   }
 
   exibirInformacoes(myEvent){
@@ -40,15 +44,20 @@ export class MapaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapaPage');
     
+    this.map = new GoogleMap('map');
+
+    this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
+      console.log('Map is ready!');
+    });
   
-     this.geolocation.getCurrentPosition().then((data) => {
-            console.log('My latitude : ', data.coords.latitude);
-            console.log('My longitude: ', data.coords.longitude);
-            // this.markerMyPosition = [
-            //   {lat:data.coords.latitude , long:data.coords.longitude}
-            // ]
-            this.lat = data.coords.latitude ;this.long = data.coords.longitude
-        });
+    //  this.geolocation.getCurrentPosition().then((data) => {
+    //         console.log('My latitude : ', data.coords.latitude);
+    //         console.log('My longitude: ', data.coords.longitude);
+    //         // this.markerMyPosition = [
+    //         //   {lat:data.coords.latitude , long:data.coords.longitude}
+    //         // ]
+    //         this.lat = data.coords.latitude ;this.long = data.coords.longitude
+    //     });
         
         
 
