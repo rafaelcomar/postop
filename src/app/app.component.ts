@@ -19,7 +19,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
-  
+  nome : string;
 
   pages: Array<{title: string, component: any , icon: string}>;
 
@@ -27,7 +27,10 @@ export class MyApp {
 
     const authObserver = afAuth.authState.subscribe( user => {
       if (user) {
-        this.rootPage = MapaPage;
+        let nomeEdit = user.email.substring(0 , user.email.indexOf('@'));
+        this.nome = nomeEdit.toUpperCase();
+        
+        this.rootPage = ListPage;
         authObserver.unsubscribe();
       }else{
         this.rootPage = LoginPage;
@@ -40,10 +43,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'PROCURAR POSTO', component: HomePage , icon:'lupa-01'},
-      { title: 'MEU PERFIL', component: HomePage , icon:'perfil-pequeno'},
-      { title: 'CONFIGURAÇÕES', component: HomePage , icon:'configuracoes-01'},
-      { title: 'FAVORITOS', component: HomePage , icon:'favoritos'},
-      { title: 'LISTA', component: ListPage , icon:'meu-rendimento'},
+      // { title: 'MEU PERFIL', component: HomePage , icon:'perfil-pequeno'},
+      // { title: 'CONFIGURAÇÕES', component: HomePage , icon:'configuracoes-01'},
+      // { title: 'FAVORITOS', component: HomePage , icon:'favoritos'},
+      { title: 'POSTOS', component: ListPage , icon:'meu-rendimento'},
       { title: 'CADASTRO', component: CadastroPostoPage , icon:'mensagem'},
       { title: 'MAPA', component: MapaPage , icon:'sobre'},
     ];

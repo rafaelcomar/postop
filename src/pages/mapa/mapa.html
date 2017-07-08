@@ -5,11 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
- 
+  <ion-navbar>
+    <button ion-button menuToggle end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>mapa</ion-title>
+  </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
   <!--<sebm-google-map
     [latitude]="-3.760985"
     [longitude]="-38.482242"
@@ -42,10 +47,5 @@
 </ion-content>
 
 <ion-footer>
-  <ion-navbar>
-    <button ion-button menuToggle end>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>mapa</ion-title>
-  </ion-navbar>
+  
 </ion-footer>

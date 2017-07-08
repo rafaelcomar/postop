@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
 import 'rxjs/add/operator/map';
 
 /*
@@ -11,7 +12,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PostoServiceProvider {
 
-  constructor(public http: Http) {
+  constructor(public http: Http , public db : AngularFireDatabase) {
     console.log('Hello PostoServiceProvider Provider');
   }
 
@@ -20,15 +21,26 @@ export class PostoServiceProvider {
   }
 
   retrieveAll(){
-    return this.http.get("https://postop-d7aac.firebaseio.com/postos.json").map(
+
+    return this.db.list('/postos');
+  }
+
+  getLatLongs(){
+        return this.http.get("https://postop-d7aac.firebaseio.com/postos.json").map(
       (res) => {
         let responseObject = res.json();
-        let postos : Array<{key: string , nome: string , gasolina: string}> = [];
+        let postos : Array<{key: string , nome: string , latitude: string, longitude: string }> = [];
+        
+        var dist = 1.2;
         for(let key of Object.keys(responseObject)){
+          
+          dist += Math.floor((Math.random() * 10) + 1) * 0.1;
           postos.push({
             key: key,
-            nome: responseObject[key].nome,
-            gasolina : responseObject[key].gasolina
+            nome: responseObject[key].nome.toUpperCase(),
+            latitude : responseObject[key].latitude,
+            longitude : responseObject[key].longitude
+            
 
           })
         }

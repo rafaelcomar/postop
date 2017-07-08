@@ -3,17 +3,33 @@
     <button ion-button menuToggle end>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Meus Postos</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding="">
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="icons[2]" item-left></ion-icon>
-      {{item.nome}}
+      <span class="title-posto">{{item.nome}}</span>
+      <table class="tabela-lista">
+        <tr>
+          <th>GASOLINA</th>
+          <th >GASOLINA AD</th>
+          <!--<th>ETANOL</th>
+          <th>DIESEL </th>
+          <th>GNV</th>-->
+        </tr>
+        <tr>
+          <td>R$ {{item.gasolina}}</td>
+          <td>R$ {{item.gasolinaAd}}</td>
+          <!--<td>R$ {{item.etanol}}</td>
+          <td>R$ {{item.diesel}}</td>
+          <td>R$ {{item.gnv}}</td>-->
+        </tr>
+      </table>
       <div class="item-note" item-right>
-        {{item.gasolina}}
+        {{item.distancia}} KM
       </div>
     </button>
   </ion-list>
@@ -21,3 +37,7 @@
     You navigated here from <b>{{selectedItem.title}}</b>
   </div>
 </ion-content>
+<ion-footer>
+  
+
+</ion-footer>

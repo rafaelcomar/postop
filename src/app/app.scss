@@ -103,22 +103,54 @@ sebm-google-map{
 }
 
 .icone-perfil-menu{
-    width:125px;
+    width:100px;
 }
 .icone-logof-menu{
-    width: 45px;
+    width: 39px;
     float: right;
     margin-top: 5px;
     margin-right: 17px;
 }
 
 .icone-configuracoes-menu{
-    width: 45px;
+    width: 39px;
     float: left;
     margin-top: 5px;
     margin-left: 17px;
 }
-
+page-mapa {
  #map , .mapa-css{
     height: 100%;
+    width : 100%;
   }
+}
+
+.tabela-lista{
+    text-align: center;
+    
+    padding: 5px;
+    color: brown;
+    font-size: 11px;
+}
+
+.tabela-lista th, .tabela-lista td{
+    padding: 0px 5px;
+    width: 65px;
+}
+
+.title-posto{
+    font-weight: bold;
+    color: brown;
+}
+.item-note{
+    font-style: italic;
+    color: brown;
+
+}
+
+.nome-user{
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #eef1f2;
+}

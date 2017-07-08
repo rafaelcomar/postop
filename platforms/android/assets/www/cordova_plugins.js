@@ -23,6 +23,14 @@ module.exports = [
         "runs": true
     },
     {
+        "id": "cordova-plugin-googlemaps.cordova-plugin-googlemaps",
+        "file": "plugins/cordova-plugin-googlemaps/www/googlemaps-cdv-plugin.js",
+        "pluginId": "cordova-plugin-googlemaps",
+        "clobbers": [
+            "cordova-plugin-googlemaps"
+        ]
+    },
+    {
         "id": "cordova-plugin-network-information.network",
         "file": "plugins/cordova-plugin-network-information/www/network.js",
         "pluginId": "cordova-plugin-network-information",
@@ -63,29 +71,22 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
-    },
-    {
-        "id": "cordova-plugin-googlemaps.cordova-plugin-googlemaps",
-        "file": "plugins/cordova-plugin-googlemaps/www/googlemaps-cdv-plugin.js",
-        "pluginId": "cordova-plugin-googlemaps",
-        "clobbers": [
-            "cordova-plugin-googlemaps"
-        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "com.googlemaps.ios": "2.3.0",
     "cordova-plugin-compat": "1.0.0",
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-geolocation": "2.4.3",
+    "cordova-plugin-googlemaps": "1.4.1",
     "cordova-plugin-network-information": "1.3.3",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.2",
     "cordova-plugin-whitelist": "1.3.1",
-    "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-googlemaps": "1.4.1"
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

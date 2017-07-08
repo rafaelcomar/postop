@@ -16,6 +16,10 @@
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
+        "cordova-plugin-googlemaps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyBdCUgFXGSY7xmKxpXnEpT1PnRk5jVnhJ8",
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
@@ -30,13 +34,12 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-googlemaps": {
-            "API_KEY_FOR_ANDROID": "AIzaSyBdCUgFXGSY7xmKxpXnEpT1PnRk5jVnhJ8",
-            "PACKAGE_NAME": "io.ionic.starter"
         }
     },
     "dependent_plugins": {
+        "com.googlemaps.ios": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "io.ionic.starter"
         }
